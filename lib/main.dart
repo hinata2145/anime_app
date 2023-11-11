@@ -1,5 +1,5 @@
-import 'package:anime_app/screen/anime_list_page.dart';
 import 'package:flutter/material.dart';
+import 'bottom_navigation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Anime app',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AnimeListPage(),
+      home: const AnimeApp(),
     );
   }
 }
