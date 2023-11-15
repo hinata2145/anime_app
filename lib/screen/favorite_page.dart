@@ -14,6 +14,12 @@ class _FavoritePageState extends State<FavoritePage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('お気に入り', style: TextStyle(color: Colors.black)),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.person),
+            onPressed: () {},
+          ),
+        ],
         backgroundColor: Colors.grey,
       ),
     );

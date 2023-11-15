@@ -14,6 +14,12 @@ class _NotWatchedPageState extends State<NotWatchedPage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('気になる', style: TextStyle(color: Colors.black)),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.person),
+            onPressed: () {},
+          ),
+        ],
         backgroundColor: Colors.grey,
       ),
     );

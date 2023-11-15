@@ -1,3 +1,4 @@
+import 'package:anime_app/components/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 import '../components/serach.dart';
@@ -18,10 +19,8 @@ class _AnimeListPageState extends State<AnimeListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text('アニメ一覧', style: TextStyle(color: Colors.black)),
-        backgroundColor: Colors.grey,
-      ),
+      appBar: const CustomAppbar(
+          title: Text('アニメ一覧', style: TextStyle(color: Colors.black))),
       body: Center(
         child: Column(
           children: [

@@ -14,6 +14,12 @@ class _AlreadyWatchedPageState extends State<AlreadyWatchedPage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('視聴済み', style: TextStyle(color: Colors.black)),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.person),
+            onPressed: () {},
+          ),
+        ],
         backgroundColor: Colors.grey,
       ),
     );
