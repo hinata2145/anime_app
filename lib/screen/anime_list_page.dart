@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/serach.dart';
+
 class AnimeListPage extends StatefulWidget {
   const AnimeListPage({Key? key}) : super(key: key);
 
@@ -23,6 +25,7 @@ class _AnimeListPageState extends State<AnimeListPage> {
       body: Center(
         child: Column(
           children: [
+            const MyCustomForm(),
             const SizedBox(
               height: 24,
             ),

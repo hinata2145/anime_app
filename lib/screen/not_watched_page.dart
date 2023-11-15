@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class NotWatchedPage extends StatefulWidget {
   const NotWatchedPage({Key? key}) : super(key: key);
@@ -10,6 +10,12 @@ class NotWatchedPage extends StatefulWidget {
 class _NotWatchedPageState extends State<NotWatchedPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: const Text('気になる', style: TextStyle(color: Colors.black)),
+        backgroundColor: Colors.grey,
+      ),
+    );
   }
 }
