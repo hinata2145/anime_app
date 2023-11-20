@@ -33,10 +33,10 @@ class _AnimeAppState extends State<AnimeApp> {
     return Scaffold(
         body: _screens[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.grey,
+          backgroundColor: const Color(0xFF242E43),
           currentIndex: _selectedIndex,
           unselectedItemColor: Colors.black,
-          selectedItemColor: Colors.redAccent,
+          selectedItemColor: const Color(0xFF711E1E),
           onTap: _onItemTapped,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(

@@ -12,17 +12,27 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      keyboardType: TextInputType.name,
-      decoration: InputDecoration(
-        hintText: 'アニメを検索',
-        fillColor: Colors.grey,
-        filled: true,
-        isDense: true,
-        prefixIcon: const Icon(Icons.search),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(40),
-          borderSide: BorderSide.none,
+    return SizedBox(
+      width: 400,
+      child: TextFormField(
+        keyboardType: TextInputType.name,
+        decoration: InputDecoration(
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Color(0xFF711E1E),
+            ),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          hintText: 'アニメを検索',
+          contentPadding: const EdgeInsets.all(10),
+          hintStyle: const TextStyle(fontSize: 15),
+          fillColor: Colors.white,
+          filled: true,
+          isDense: true,
+          prefixIcon: const Icon(Icons.search),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
         ),
       ),
     );
