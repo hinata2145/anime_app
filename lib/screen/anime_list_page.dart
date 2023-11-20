@@ -10,7 +10,9 @@ class AnimeListPage extends StatefulWidget {
 }
 
 class _AnimeListPageState extends State<AnimeListPage> {
-  int selectedButton = 0;
+  bool starTap = false;
+  bool kininaluTap = false;
+  bool checkTap = false;
 
   @override
   Widget build(BuildContext context) {
@@ -109,16 +111,10 @@ class _AnimeListPageState extends State<AnimeListPage> {
                                     color: Colors.black,
                                     onPressed: () {
                                       setState(() {
-                                        //条件分岐でselectedButtonが１のときは、中身を０に
-                                        //中が１以外のときは、１にする
-                                        if (selectedButton == 1) {
-                                          selectedButton = 0;
-                                        } else if (selectedButton != 1) {
-                                          selectedButton = 1;
-                                        }
+                                        kininaluTap = !kininaluTap;
                                       });
                                     },
-                                    icon: Icon(selectedButton == 1
+                                    icon: Icon(kininaluTap == true
                                         ? Icons.bookmark_add
                                         : Icons.bookmark_add_outlined)),
                                 IconButton(
@@ -126,33 +122,24 @@ class _AnimeListPageState extends State<AnimeListPage> {
                                     color: Colors.black,
                                     onPressed: () {
                                       setState(() {
-                                        //中が１以外のときは、１にする
-                                        if (selectedButton == 2) {
-                                          selectedButton = 0;
-                                        } else if (selectedButton != 2) {
-                                          selectedButton = 2;
-                                        }
+                                        checkTap = !checkTap;
                                       });
                                     },
                                     icon: Icon(
-                                      selectedButton == 2
-                                          ? Icons.check_box_outlined
-                                          : Icons.check_box_outline_blank_sharp,
+                                      checkTap == true
+                                          ? Icons.check_box_outline_blank_sharp
+                                          : Icons.check_box_outlined,
                                     )),
                                 IconButton(
                                     iconSize: 24,
                                     color: Colors.black,
                                     onPressed: () {
                                       setState(() {
-                                        if (selectedButton == 3) {
-                                          selectedButton = 0;
-                                        } else if (selectedButton != 3) {
-                                          selectedButton = 3;
-                                        }
+                                        starTap = !starTap;
                                       });
                                     },
                                     icon: Icon(
-                                      selectedButton == 3
+                                      starTap == true
                                           ? Icons.star
                                           : Icons.star_border,
                                     )),

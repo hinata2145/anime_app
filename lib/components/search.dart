@@ -18,7 +18,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
         keyboardType: TextInputType.name,
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: Color(0xFF711E1E),
             ),
             borderRadius: BorderRadius.circular(30),
