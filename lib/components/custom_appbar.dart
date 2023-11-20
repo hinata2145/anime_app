@@ -17,7 +17,10 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const ProfilePage()));
             },
-            icon: const Icon(Icons.person))
+            icon: const Icon(
+              Icons.person,
+              color: Colors.black,
+            ))
       ],
     );
   }

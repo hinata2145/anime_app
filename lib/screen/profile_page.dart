@@ -16,6 +16,16 @@ class _ProfilePageState extends State<ProfilePage> {
         title: const Text('プロフィール', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.grey,
       ),
+      body: Center(
+        child: Container(
+          height: 200,
+          width: 390,
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            borderRadius: BorderRadius.circular(48),
+          ),
+        ),
+      ),
     );
   }
 }

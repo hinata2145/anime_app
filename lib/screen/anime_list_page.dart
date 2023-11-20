@@ -1,7 +1,6 @@
 import 'package:anime_app/components/custom_appbar.dart';
 import 'package:flutter/material.dart';
-
-import '../components/serach.dart';
+import '../components/search.dart';
 
 class AnimeListPage extends StatefulWidget {
   const AnimeListPage({Key? key}) : super(key: key);
@@ -11,9 +10,7 @@ class AnimeListPage extends StatefulWidget {
 }
 
 class _AnimeListPageState extends State<AnimeListPage> {
-  bool starTap = false;
-  bool kininaluTap = false;
-  bool checkTap = false;
+  int selectedButton = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -21,114 +18,132 @@ class _AnimeListPageState extends State<AnimeListPage> {
       backgroundColor: Colors.black,
       appBar: const CustomAppbar(
           title: Text('アニメ一覧', style: TextStyle(color: Colors.black))),
-      body: Center(
-        child: Column(
-          children: [
-            const MyCustomForm(),
-            const SizedBox(
-              height: 24,
-            ),
-            Container(
-              padding: const EdgeInsets.all(5.0),
-              height: 200,
-              width: 390,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(48),
+      body: Container(
+        margin: const EdgeInsets.only(top: 20),
+        child: Center(
+          child: Column(
+            children: [
+              const MyCustomForm(),
+              const SizedBox(
+                height: 24,
               ),
-              child: Row(
-                children: [
-                  const SizedBox(width: 10),
-                  Container(
-                    width: 100,
-                    height: 150,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(28.0),
-                      child: Image.network(
-                        'https://www.mbs.jp/jujutsukaisen/images/head_230901.webp',
-                        fit: BoxFit.cover,
+              Container(
+                padding: const EdgeInsets.all(5.0),
+                height: 200,
+                width: 390,
+                decoration: BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(48),
+                ),
+                child: Row(
+                  children: [
+                    const SizedBox(width: 10),
+                    Container(
+                      width: 100,
+                      height: 150,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(28.0),
+                        child: Image.network(
+                          'https://www.mbs.jp/jujutsukaisen/images/head_230901.webp',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 30),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(height: 20),
-                      const Text(
-                        "呪術廻戦",
-                        style: TextStyle(fontSize: 24, color: Colors.black),
-                      ),
-                      const SizedBox(height: 20),
-                      const Text(
-                        "ジャンル：アクション",
-                      ),
-                      const Text("開始日   ：2002/4/10"),
-                      const SizedBox(height: 20),
-                      Row(
-                        children: [
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.black,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(8) //こちらを適用
-                                    )),
-                            child: const Text(
-                              '詳しく見る',
-                              style:
-                                  TextStyle(fontSize: 10, color: Colors.white),
+                    const SizedBox(width: 30),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 20),
+                        const Text(
+                          "呪術廻戦",
+                          style: TextStyle(fontSize: 24, color: Colors.black),
+                        ),
+                        const SizedBox(height: 20),
+                        const Text(
+                          "ジャンル：アクション",
+                        ),
+                        const Text("開始日   ：2002/4/10"),
+                        const SizedBox(height: 20),
+                        Row(
+                          children: [
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(8) //こちらを適用
+                                      )),
+                              child: const Text(
+                                '詳しく見る',
+                                style: TextStyle(
+                                    fontSize: 10, color: Colors.white),
+                              ),
+                              onPressed: () {},
                             ),
-                            onPressed: () {},
-                          ),
-                          IconButton(
-                              iconSize: 24,
-                              color: Colors.black,
-                              onPressed: () {
-                                setState(() {
-                                  kininaluTap = !kininaluTap;
-                                });
-                              },
-                              icon: Icon(kininaluTap == true
-                                  ? Icons.bookmark_add
-                                  : Icons.bookmark_add_outlined)),
-                          IconButton(
-                              iconSize: 24,
-                              color: Colors.black,
-                              onPressed: () {
-                                setState(() {
-                                  checkTap = !checkTap;
-                                });
-                              },
-                              icon: Icon(
-                                checkTap == true
-                                    ? Icons.check_box_outline_blank_sharp
-                                    : Icons.check_box_outlined,
-                              )),
-                          IconButton(
-                              iconSize: 24,
-                              color: Colors.black,
-                              onPressed: () {
-                                setState(() {
-                                  starTap = !starTap;
-                                });
-                              },
-                              icon: Icon(
-                                starTap == true
-                                    ? Icons.star
-                                    : Icons.star_border,
-                              )),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
+                            IconButton(
+                                iconSize: 24,
+                                color: Colors.black,
+                                onPressed: () {
+                                  setState(() {
+                                    //条件分岐でselectedButtonが１のときは、中身を０に
+                                    //中が１以外のときは、１にする
+                                    if (selectedButton == 1) {
+                                      selectedButton = 0;
+                                    } else if (selectedButton != 1) {
+                                      selectedButton = 1;
+                                    }
+                                  });
+                                },
+                                icon: Icon(selectedButton == 1
+                                    ? Icons.bookmark_add
+                                    : Icons.bookmark_add_outlined)),
+                            IconButton(
+                                iconSize: 24,
+                                color: Colors.black,
+                                onPressed: () {
+                                  setState(() {
+                                    //中が１以外のときは、１にする
+                                    if (selectedButton == 2) {
+                                      selectedButton = 0;
+                                    } else if (selectedButton != 2) {
+                                      selectedButton = 2;
+                                    }
+                                  });
+                                },
+                                icon: Icon(
+                                  selectedButton == 2
+                                      ? Icons.check_box_outlined
+                                      : Icons.check_box_outline_blank_sharp,
+                                )),
+                            IconButton(
+                                iconSize: 24,
+                                color: Colors.black,
+                                onPressed: () {
+                                  setState(() {
+                                    if (selectedButton == 3) {
+                                      selectedButton = 0;
+                                    } else if (selectedButton != 3) {
+                                      selectedButton = 3;
+                                    }
+                                  });
+                                },
+                                icon: Icon(
+                                  selectedButton == 3
+                                      ? Icons.star
+                                      : Icons.star_border,
+                                )),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

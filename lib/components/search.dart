@@ -13,6 +13,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: TextInputType.name,
       decoration: InputDecoration(
         hintText: 'アニメを検索',
         fillColor: Colors.grey,

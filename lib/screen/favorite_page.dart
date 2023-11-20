@@ -1,4 +1,6 @@
+import 'package:anime_app/components/custom_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:anime_app/components/search.dart';
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({Key? key}) : super(key: key);
@@ -12,15 +14,22 @@ class _FavoritePageState extends State<FavoritePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text('お気に入り', style: TextStyle(color: Colors.black)),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.person),
-            onPressed: () {},
+      appBar: const CustomAppbar(
+        title: Text(
+          'お気に入り',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      body: Container(
+        margin: const EdgeInsets.only(top: 20),
+        child: Center(
+          child: Column(
+            children: const [
+              MyCustomForm(),
+              SizedBox(height: 24),
+            ],
           ),
-        ],
-        backgroundColor: Colors.grey,
+        ),
       ),
     );
   }
