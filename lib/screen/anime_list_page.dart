@@ -33,8 +33,9 @@ class _AnimeListPageState extends State<AnimeListPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
+                    margin: const EdgeInsets.only(right: 300),
                     height: 25,
-                    width: 120,
+                    width: 104,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black, width: 0.5),
                       borderRadius: BorderRadius.circular(8),
@@ -49,23 +50,18 @@ class _AnimeListPageState extends State<AnimeListPage> {
                   const SizedBox(
                     height: 12,
                   ),
-                  Stack(
-                    children: [],
-                  ),
                   Container(
-                    padding: const EdgeInsets.all(5.0),
-                    height: 200,
-                    width: 390,
+                    // height: 400,
+                    width: 200,
                     decoration: BoxDecoration(
                       color: const Color(0xFF242E43),
-                      borderRadius: BorderRadius.circular(48),
+                      borderRadius: BorderRadius.circular(28),
                     ),
-                    child: Row(
+                    child: Column(
                       children: [
-                        const SizedBox(width: 10),
                         Container(
-                          width: 100,
-                          height: 100,
+                          width: double.infinity,
+                          height: 150,
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                           ),
@@ -77,70 +73,11 @@ class _AnimeListPageState extends State<AnimeListPage> {
                             ),
                           ),
                         ),
-                        Container(
-                          color: Colors.red,
-                          margin: const EdgeInsets.only(top: 142),
-                          height: 48,
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  Row(
-                                    children: const [
-                                      Text(
-                                        '呪術廻戦',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ],
-                                  ),
-                                  IconButton(
-                                      iconSize: 24,
-                                      color: Colors.white,
-                                      onPressed: () {
-                                        setState(() {
-                                          kininaluTap = !kininaluTap;
-                                        });
-                                      },
-                                      icon: Icon(kininaluTap == true
-                                          ? Icons.bookmark_add
-                                          : Icons.bookmark_add_outlined)),
-                                  IconButton(
-                                      iconSize: 24,
-                                      color: Colors.black,
-                                      onPressed: () {
-                                        setState(() {
-                                          checkTap = !checkTap;
-                                        });
-                                      },
-                                      icon: Icon(
-                                        checkTap == true
-                                            ? Icons
-                                                .check_box_outline_blank_sharp
-                                            : Icons.check_box_outlined,
-                                      )),
-                                  IconButton(
-                                      iconSize: 24,
-                                      color: Colors.black,
-                                      onPressed: () {
-                                        setState(() {
-                                          starTap = !starTap;
-                                        });
-                                      },
-                                      icon: Icon(
-                                        starTap == true
-                                            ? Icons.star
-                                            : Icons.star_border,
-                                      )),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
                       ],
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
