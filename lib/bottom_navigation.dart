@@ -35,7 +35,7 @@ class _AnimeAppState extends State<AnimeApp> {
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: const Color(0xFF242E43),
           currentIndex: _selectedIndex,
-          unselectedItemColor: Colors.black,
+          unselectedItemColor: Colors.white,
           selectedItemColor: const Color(0xFF711E1E),
           onTap: _onItemTapped,
           items: const <BottomNavigationBarItem>[
