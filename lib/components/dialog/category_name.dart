@@ -6,8 +6,9 @@ class CategoryName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        decoration: BoxDecoration(
+            color: Colors.orange, borderRadius: BorderRadius.circular(16)),
         height: 24,
-        color: Colors.orange,
         child: const Padding(
           padding: EdgeInsets.only(right: 10, left: 10),
           child: Text(
