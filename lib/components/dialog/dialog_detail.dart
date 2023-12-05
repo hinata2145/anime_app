@@ -16,9 +16,15 @@ class _DialogDetailState extends State<DialogDetail> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20), //丸み
+      ),
       contentPadding: EdgeInsets.zero,
       content: Container(
-        color: const Color(0xFF242E43),
+        decoration: BoxDecoration(
+          color: const Color(0xFF242E43),
+          borderRadius: BorderRadius.circular(16),
+        ),
         height: 550,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,10 +34,10 @@ class _DialogDetailState extends State<DialogDetail> {
                 Container(
                   height: 280,
                   width: 500,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          'https://www.mbs.jp/jujutsukaisen/images/head_230901.webp'),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.network(
+                      'https://www.mbs.jp/jujutsukaisen/images/head_230901.webp',
                       fit: BoxFit.cover,
                     ),
                   ),
