@@ -19,14 +19,14 @@ class _DialogDetailState extends State<DialogDetail> {
       contentPadding: EdgeInsets.zero,
       content: Container(
         color: const Color(0xFF242E43),
-        height: 500,
+        height: 550,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
                 Container(
-                  height: 260,
+                  height: 280,
                   width: 500,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
@@ -52,6 +52,7 @@ class _DialogDetailState extends State<DialogDetail> {
             ),
             const SizedBox(height: 16),
             Container(
+              height: 240,
               width: 320,
               margin: const EdgeInsets.only(left: 16),
               child: Stack(
@@ -69,6 +70,9 @@ class _DialogDetailState extends State<DialogDetail> {
                       Text(
                         "2023   2シーズン",
                         style: TextStyle(color: Colors.white, fontSize: 15),
+                      ),
+                      SizedBox(
+                        height: 8,
                       ),
                       CategoryName(),
                       SizedBox(
@@ -91,7 +95,7 @@ class _DialogDetailState extends State<DialogDetail> {
                     ],
                   ),
                   Positioned(
-                    right: 1,
+                    right: -2,
                     child: Column(
                       children: [
                         IconButton(
@@ -99,14 +103,14 @@ class _DialogDetailState extends State<DialogDetail> {
                             color: Colors.white,
                             onPressed: () {
                               setState(() {
-                                kininaluTap = !kininaluTap;
+                                starTap = !starTap;
                               });
                             },
-                            icon: Icon(kininaluTap == true
-                                ? Icons.bookmark_add
-                                : Icons.bookmark_add_outlined)),
+                            icon: Icon(
+                              starTap == true ? Icons.star : Icons.star_border,
+                            )),
                         const Text(
-                          '気になる',
+                          'お気に入り',
                           style: TextStyle(fontSize: 12, color: Colors.white),
                         ),
                         IconButton(
@@ -123,7 +127,7 @@ class _DialogDetailState extends State<DialogDetail> {
                                   : Icons.check_box_outlined,
                             )),
                         const Text(
-                          '気になる',
+                          '視聴済み',
                           style: TextStyle(fontSize: 12, color: Colors.white),
                         ),
                         IconButton(
@@ -131,12 +135,12 @@ class _DialogDetailState extends State<DialogDetail> {
                             color: Colors.white,
                             onPressed: () {
                               setState(() {
-                                starTap = !starTap;
+                                kininaluTap = !kininaluTap;
                               });
                             },
-                            icon: Icon(
-                              starTap == true ? Icons.star : Icons.star_border,
-                            )),
+                            icon: Icon(kininaluTap == true
+                                ? Icons.bookmark_add
+                                : Icons.bookmark_add_outlined)),
                         const Text(
                           '気になる',
                           style: TextStyle(fontSize: 12, color: Colors.white),
