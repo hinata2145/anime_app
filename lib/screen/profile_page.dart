@@ -11,10 +11,10 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('プロフィール', style: TextStyle(color: Colors.black)),
-        backgroundColor: Colors.grey,
+        backgroundColor: const Color(0xFF242E43),
+        title: const Text('プロフィール', style: TextStyle(color: Colors.white)),
       ),
       body: Center(
         child: Container(

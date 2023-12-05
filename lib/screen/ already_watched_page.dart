@@ -13,20 +13,22 @@ class _AlreadyWatchedPageState extends State<AlreadyWatchedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: const CustomAppbar(
         title: Text(
           '視聴済み',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: Container(
         margin: const EdgeInsets.only(top: 20),
-        child: Column(
-          children: const [
-            MyCustomForm(),
-            SizedBox(height: 24),
-          ],
+        child: Center(
+          child: Column(
+            children: const [
+              MyCustomForm(),
+              SizedBox(height: 24),
+            ],
+          ),
         ),
       ),
     );

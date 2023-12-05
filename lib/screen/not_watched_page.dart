@@ -13,11 +13,11 @@ class _NotWatchedPageState extends State<NotWatchedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: const CustomAppbar(
         title: Text(
           '気になる',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: Container(

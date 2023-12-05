@@ -1,7 +1,7 @@
 import 'package:anime_app/components/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import '../components/search.dart';
-import 'package:anime_app/components/dialog_detail.dart';
+import 'package:anime_app/components/dialog/dialog_detail.dart';
 
 class AnimeListPage extends StatefulWidget {
   const AnimeListPage({Key? key}) : super(key: key);
@@ -11,10 +11,6 @@ class AnimeListPage extends StatefulWidget {
 }
 
 class _AnimeListPageState extends State<AnimeListPage> {
-  bool starTap = false;
-  bool kininaluTap = false;
-  bool checkTap = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +67,7 @@ class _AnimeListPageState extends State<AnimeListPage> {
                           showDialog(
                             context: context,
                             builder: (_) {
-                              return DialogDetail();
+                              return const DialogDetail();
                             },
                           );
                         },
