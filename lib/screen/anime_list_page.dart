@@ -1,7 +1,8 @@
+import 'package:anime_app/components/anime_screen.dart';
 import 'package:anime_app/components/custom_appbar.dart';
 import 'package:flutter/material.dart';
+import '../components/dialog/dialog_detail.dart';
 import '../components/search.dart';
-import 'package:anime_app/components/dialog/dialog_detail.dart';
 
 class AnimeListPage extends StatefulWidget {
   const AnimeListPage({Key? key}) : super(key: key);
@@ -24,13 +25,12 @@ class _AnimeListPageState extends State<AnimeListPage> {
             children: [
               const MyCustomForm(),
               const SizedBox(
-                height: 12,
+                height: 16,
               ),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(right: 300),
+                    margin: const EdgeInsets.only(right: 260),
                     height: 25,
                     width: 104,
                     decoration: BoxDecoration(
@@ -45,78 +45,165 @@ class _AnimeListPageState extends State<AnimeListPage> {
                     ),
                   ),
                   const SizedBox(
-                    height: 12,
+                    height: 20,
                   ),
-                  GestureDetector(
-                    //ポップアップ処理
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (_) {
-                            return const DialogDetail();
-                          });
-                    },
-                    child: Container(
-                      // height: 400,
-                      width: 180,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: GestureDetector(
-                        onTap: () {
-                          showDialog(
-                            context: context,
-                            builder: (_) {
-                              return const DialogDetail();
-                            },
-                          );
-                        },
-                        child: Stack(
-                          children: [
-                            //アニメ画面
-                            Positioned(
-                              // bottom: 0,
-                              child: Container(
-                                width: double.infinity,
-                                height: 180,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://www.mbs.jp/jujutsukaisen/images/head_230901.webp',
-                                    fit: BoxFit.cover,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          //ポップアップ処理
+                          onTap: () {
+                            showDialog(
+                                context: context,
+                                builder: (_) {
+                                  return const DialogDetail();
+                                });
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 10, left: 16),
+                            // height: 400,
+                            width: 180,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: GestureDetector(
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (_) {
+                                    return const DialogDetail();
+                                  },
+                                );
+                              },
+                              child: Stack(
+                                children: [
+                                  //アニメ画面
+                                  Positioned(
+                                    // bottom: 0,
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 180,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        child: Image.network(
+                                          'https://www.mbs.jp/jujutsukaisen/images/head_230901.webp',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                ),
+                                  Positioned(
+                                    bottom: 0,
+                                    child: Container(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xFF242E43)
+                                            .withOpacity(0.8),
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                      ),
+                                      height: 50,
+                                      width: 180,
+                                      child: const Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Text(
+                                          '呪術廻戦',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            Positioned(
-                              bottom: 0,
-                              child: Container(
-                                padding: const EdgeInsets.only(left: 10),
-                                decoration: BoxDecoration(
-                                  color:
-                                      const Color(0xFF242E43).withOpacity(0.8),
-                                  borderRadius: BorderRadius.circular(16.0),
-                                ),
-                                height: 50,
-                                width: 180,
-                                child: const Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    '呪術廻戦',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
+                        GestureDetector(
+                          //ポップアップ処理
+                          onTap: () {
+                            showDialog(
+                                context: context,
+                                builder: (_) {
+                                  return const DialogDetail();
+                                });
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(
+                              right: 10,
+                            ),
+                            // height: 400,
+                            width: 180,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: GestureDetector(
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (_) {
+                                    return const DialogDetail();
+                                  },
+                                );
+                              },
+                              child: Stack(
+                                children: [
+                                  //アニメ画面
+                                  Positioned(
+                                    // bottom: 0,
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 180,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        child: Image.network(
+                                          'https://www.mbs.jp/jujutsukaisen/images/head_230901.webp',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    bottom: 0,
+                                    child: Container(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xFF242E43)
+                                            .withOpacity(0.8),
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                      ),
+                                      height: 50,
+                                      width: 180,
+                                      child: const Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Text(
+                                          '呪術廻戦',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
