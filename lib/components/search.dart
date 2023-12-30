@@ -13,7 +13,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 400,
+      width: 380,
       child: TextFormField(
         keyboardType: TextInputType.name,
         decoration: InputDecoration(
