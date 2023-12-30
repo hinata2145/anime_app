@@ -31,7 +31,7 @@ class _DialogDetailState extends State<DialogDetail> {
           children: [
             Stack(
               children: [
-                Container(
+                SizedBox(
                   height: 280,
                   width: 500,
                   child: ClipRRect(
@@ -90,7 +90,7 @@ class _DialogDetailState extends State<DialogDetail> {
                               fontSize: 15,
                               fontWeight: FontWeight.bold)),
                       SizedBox(
-                        width: 260,
+                        width: 230,
                         child: Text(
                             "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
                             style: TextStyle(
@@ -109,14 +109,14 @@ class _DialogDetailState extends State<DialogDetail> {
                             color: Colors.white,
                             onPressed: () {
                               setState(() {
-                                starTap = !starTap;
+                                kininaluTap = !kininaluTap;
                               });
                             },
-                            icon: Icon(
-                              starTap == true ? Icons.star : Icons.star_border,
-                            )),
+                            icon: Icon(kininaluTap == true
+                                ? Icons.bookmark_add
+                                : Icons.bookmark_add_outlined)),
                         const Text(
-                          'お気に入り',
+                          '気になる',
                           style: TextStyle(fontSize: 12, color: Colors.white),
                         ),
                         IconButton(
@@ -141,14 +141,14 @@ class _DialogDetailState extends State<DialogDetail> {
                             color: Colors.white,
                             onPressed: () {
                               setState(() {
-                                kininaluTap = !kininaluTap;
+                                starTap = !starTap;
                               });
                             },
-                            icon: Icon(kininaluTap == true
-                                ? Icons.bookmark_add
-                                : Icons.bookmark_add_outlined)),
+                            icon: Icon(
+                              starTap == true ? Icons.star : Icons.star_border,
+                            )),
                         const Text(
-                          '気になる',
+                          'お気に入り',
                           style: TextStyle(fontSize: 12, color: Colors.white),
                         ),
                       ],
