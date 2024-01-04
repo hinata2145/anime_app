@@ -1,6 +1,15 @@
 import 'package:anime_app/components/custom_appbar.dart';
+import 'package:anime_app/components/river_pod.dart';
 import 'package:flutter/material.dart';
 import 'package:anime_app/components/search.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../main.dart';
+
+void main() {
+  const app = MyApp();
+  const scope = ProviderScope(child: app);
+  runApp(scope);
+}
 
 class NotWatchedPage extends StatefulWidget {
   const NotWatchedPage({Key? key}) : super(key: key);
@@ -22,11 +31,14 @@ class _NotWatchedPageState extends State<NotWatchedPage> {
       ),
       body: Container(
         margin: const EdgeInsets.only(top: 20),
-        child: Center(
+        child: const Center(
           child: Column(
-            children: const [
+            children: [
               MyCustomForm(),
               SizedBox(height: 24),
+              Center(
+                child: MyWidget(),
+              ),
             ],
           ),
         ),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'bottom_navigation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  const app = MyApp();
+  const scope = ProviderScope(child: app);
+  runApp(scope);
 }
 
 class MyApp extends StatelessWidget {

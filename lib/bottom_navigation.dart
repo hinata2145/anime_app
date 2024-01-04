@@ -2,7 +2,6 @@ import 'package:anime_app/screen/anime_list_page.dart';
 import 'package:anime_app/screen/favorite_page.dart';
 import 'package:anime_app/screen/not_watched_page.dart';
 import 'package:flutter/material.dart';
-
 import 'screen/ already_watched_page.dart';
 
 class AnimeApp extends StatefulWidget {
