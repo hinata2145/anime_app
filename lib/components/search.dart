@@ -4,16 +4,16 @@ class MyCustomForm extends StatefulWidget {
   const MyCustomForm({Key? key}) : super(key: key);
 
   @override
-  State<MyCustomForm> createState() => _MyCustomFormState();
+  State<MyCustomForm> createState() => MyCustomFormState();
 }
 
-class _MyCustomFormState extends State<MyCustomForm> {
+class MyCustomFormState extends State<MyCustomForm> {
   final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 380,
+      width: 370,
       child: TextFormField(
         keyboardType: TextInputType.name,
         decoration: InputDecoration(

@@ -9,9 +9,9 @@ class DialogDetail extends StatefulWidget {
 }
 
 class _DialogDetailState extends State<DialogDetail> {
-  bool starTap = false;
   bool kininaluTap = false;
   bool checkTap = false;
+  bool starTap = false;
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +63,9 @@ class _DialogDetailState extends State<DialogDetail> {
               margin: const EdgeInsets.only(left: 16),
               child: Stack(
                 children: [
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
                         "呪術廻戦",
                         style: TextStyle(
@@ -128,7 +128,7 @@ class _DialogDetailState extends State<DialogDetail> {
                               });
                             },
                             icon: Icon(
-                              checkTap == true
+                              checkTap == false
                                   ? Icons.check_box_outline_blank_sharp
                                   : Icons.check_box_outlined,
                             )),

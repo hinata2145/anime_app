@@ -22,9 +22,9 @@ class _AlreadyWatchedPageState extends State<AlreadyWatchedPage> {
       ),
       body: Container(
         margin: const EdgeInsets.only(top: 20),
-        child: Center(
+        child: const Center(
           child: Column(
-            children: const [
+            children: [
               MyCustomForm(),
               SizedBox(height: 24),
             ],
